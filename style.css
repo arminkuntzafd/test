@@ -1,4 +1,4 @@
-/* Allgemeine Stile */
+/* === Basis-Layout === */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,17 +9,16 @@ html, body {
   background-color: #f4f4f4;
 }
 
-/* Header */
+/* === Header === */
 header {
   background-color: #002147;
   color: white;
   padding: 20px 30px;
   text-align: center;
-  position: relative; /* Der Header ist nun nicht mehr fixiert */
   z-index: 1000;
+  position: relative;
 }
 
-/* Header-Inhalt */
 .header-content {
   display: flex;
   flex-direction: column;
@@ -49,20 +48,20 @@ header p {
   font-size: 1.1em;
 }
 
-/* Navigation */
+/* === Navigation === */
 nav {
   display: flex;
   justify-content: center;
   background-color: #333;
   padding: 10px 0;
   position: relative;
-  z-index: 999; /* Damit es über dem Content liegt */
+  z-index: 999;
 }
 
 .menu-item {
+  position: relative;
   margin: 0 15px;
-  flex: 0 1 auto; /* Verhindert, dass Elemente schrumpfen oder sich dehnen */
-  white-space: nowrap; /* Verhindert Umbrüche */
+  white-space: nowrap;
 }
 
 .menu-item a {
@@ -72,73 +71,70 @@ nav {
   display: inline-block;
 }
 
-.menu-item:hover a {
+.menu-item:hover > a {
   background-color: #555;
 }
 
-/* Dropdown-Menü */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
+/* === Dropdown-Level 1 === */
+.dropdown .dropdown-content {
   display: none;
   position: absolute;
   background-color: #444;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 2000;
+  min-width: 180px;
   top: 100%;
+  left: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
 }
 
 .dropdown:hover > .dropdown-content {
   display: block;
 }
 
-.dropdown-content .dropdown-item {
-  padding: 10px;
+.dropdown-item {
+  position: relative;
 }
 
-.dropdown-content .dropdown-item a {
+.dropdown-item a {
+  display: block;
+  padding: 10px;
   color: white;
   text-decoration: none;
-  display: block;
 }
 
-.dropdown-content .dropdown-item:hover {
+.dropdown-item:hover {
   background-color: #555;
 }
 
-/* Footer */
+/* === Dropdown-Level 2 & 3 (seitlich) === */
+.dropdown-item .dropdown-content {
+  top: 0;
+  left: 100%;
+  margin-left: 1px;
+  display: none;
+}
+
+.dropdown-item:hover > .dropdown-content {
+  display: block;
+}
+
+/* === Footer === */
 footer {
   background-color: #002147;
   color: white;
   text-align: center;
   padding: 20px;
   position: relative;
-  bottom: 0;
   width: 100%;
 }
 
-/* Sicherstellen, dass der Inhalt nicht unter Header und Navigation verschwindet */
+/* === Abstand zu Header/Nav === */
 main {
-  padding-top: 180px; /* Platz für Header und Navigation */
+  padding-top: 180px;
 }
 
-/* Responsive Design */
+/* === Responsive === */
 @media (max-width: 768px) {
-  header {
-    text-align: center;
-  }
-
-  .header-content {
-    align-items: center;
-  }
-
-  .logo-container {
-    margin-bottom: 10px;
-  }
-
   nav {
     flex-direction: column;
     align-items: center;
@@ -148,9 +144,17 @@ main {
     margin: 5px 0;
   }
 
-  .dropdown-content {
-    left: 0;
-    right: 0;
-    min-width: 100%;
+  .dropdown .dropdown-content,
+  .dropdown-item .dropdown-content {
+    position: static;
+    margin-left: 0;
+    box-shadow: none;
+    background-color: #444;
+    width: 100%;
+  }
+
+  .dropdown:hover > .dropdown-content,
+  .dropdown-item:hover > .dropdown-content {
+    display: block;
   }
 }
