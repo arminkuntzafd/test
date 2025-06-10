@@ -10,6 +10,7 @@
 
 <body>
 
+    <!-- Header -->
     <header>
         <a href="index.html">
             <img src="AfD.png" alt="AfD" id="logo">
@@ -18,38 +19,25 @@
         <p>Wir setzen uns für Ihre Interessen ein!</p>
     </header>
 
-    <nav>
-        <div class="menu-item"><a href="index.html">Start</a></div>
-        <div class="menu-item"><a href="team.html">Unser Team</a></div>
-        <div class="menu-item"><a href="kontakt.html">Kontakt</a></div>
-        <div class="menu-item dropdown">
-            <a href="#">Grundlagen</a>
-            <div class="dropdown-content">
-                <div class="dropdown-item"><a href="#">Kreissatzung</a></div>
-                <div class="dropdown-item dropdown">
-                    <a href="#">Landessatzung</a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-item"><a href="#">Paragraf 1</a></div>
-                        <div class="dropdown-item"><a href="#">Paragraf 2</a></div>
-                        <div class="dropdown-item dropdown">
-                            <a href="#">Finanzordnung</a>
-                            <div class="dropdown-content">
-                                <div class="dropdown-item"><a href="#">Finanzregelung A</a></div>
-                                <div class="dropdown-item"><a href="#">Finanzregelung B</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown-item"><a href="#">Bundessatzung</a></div>
-            </div>
-        </div>
-        <div class="menu-item"><a href="impressum.html">Impressum</a></div>
-    </nav>
+    <!-- Layout Container, wo die Navigation und weitere Teile geladen werden -->
+    <div id="layout-container"></div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 AfD-Fraktion im Stadtrat Pirmasens. Alle Rechte vorbehalten.</p>
         <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
     </footer>
+
+    <!-- Layout per Fetch laden -->
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            fetch("layout.html")
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById("layout-container").innerHTML = html;
+                });
+        });
+    </script>
 
 </body>
 
