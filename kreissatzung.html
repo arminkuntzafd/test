@@ -21,3 +21,16 @@
 </body>
 
 </html>
+<script>
+    fetch('layout.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Fehler beim Laden der Layout-Datei');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('layout-container').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Fehler:', error);
+        });
+</script>
