@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schiedsordnung</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Funktion, um das Layout von der layout.html zu laden
+        window.onload = function () {
+            fetch("layout.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("layout-container").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error("Fehler beim Laden des Layouts: ", error);
+                });
+        }
+    </script>
 </head>
 
 <body>
@@ -18,7 +31,6 @@
         <iframe src="sgo.pdf" width="100%" height="100%" style="border:none;"></iframe>
     </main>
 
-    
 </body>
 
 </html>
