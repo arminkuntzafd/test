@@ -1,48 +1,66 @@
-<!-- layout.html -->
-<header>
-  <div class="header-content">
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="AfD.png" alt="AfD Logo" id="logo">
-      </a>
-    </div>
-    <div class="header-text">
-      <h1>AfD-Fraktion im Stadtrat Pirmasens</h1>
-      <p>Wir setzen uns für Ihre Interessen ein!</p>
-    </div>
-  </div>
-</header>
+<!DOCTYPE html>
+<html lang="de">
 
-<nav>
-  <div class="menu-item"><a href="index.html">Start</a></div>
-  <div class="menu-item"><a href="team.html">Unser Team</a></div>
-  <div class="menu-item"><a href="kontakt.html">Kontakt</a></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfD-Fraktion Stadtrat Pirmasens</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon für die gesamte Seite -->
+    <link rel="icon" href="AfD.png" type="image/png" />
+</head>
 
-  <div class="menu-item dropdown">
-    <a href="#">Grundlagen</a>
-    <div class="dropdown-content">
-      <div class="dropdown-item"><a href="#">Kreissatzung</a></div>
-      <div class="dropdown-item"><a href="#">Landessatzung</a></div>
-      <div class="dropdown-item dropdown">
-        <a href="#">Bund</a>
-        <div class="dropdown-content">
-          <div class="dropdown-item"><a href="#">Bundessatzung</a></div>
-          <div class="dropdown-item dropdown">
-            <a href="#">Ordnungen</a>
-            <div class="dropdown-content">
-              <div class="dropdown-item"><a href="#">Finanzordnung</a></div>
-              <div class="dropdown-item"><a href="#">Schiedsordnung</a></div>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="AfD.png" alt="AfD Logo" id="logo">
+                </a>
             </div>
-          </div>
+            <div class="header-text">
+                <h1>AfD-Fraktion Stadtrat Pirmasens</h1>
+                <p>Wir setzen uns für Ihre Interessen ein!</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </header>
 
-  <div class="menu-item"><a href="impressum.html">Impressum</a></div>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="menu-item"><a href="index.html">Start</a></div>
+        <div class="menu-item"><a href="team.html">Unser Team</a></div>
+        <div class="menu-item"><a href="kontakt.html">Kontakt</a></div>
+        <div class="menu-item dropdown">
+            <a href="#">Grundlagen</a>
+            <div class="dropdown-content">
+                <div class="dropdown-item"><a href="iframe.html?src=kreissatzung">Kreissatzung</a></div>
+                <div class="dropdown-item dropdown">
+                    <a href="#">Landessatzung</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-item"><a href="#">Paragraf 1</a></div>
+                        <div class="dropdown-item"><a href="#">Paragraf 2</a></div>
+                        <div class="dropdown-item dropdown">
+                            <a href="#">Finanzordnung</a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-item"><a href="#">Finanzregelung A</a></div>
+                                <div class="dropdown-item"><a href="#">Finanzregelung B</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-item"><a href="#">Bundessatzung</a></div>
+            </div>
+        </div>
+        <div class="menu-item"><a href="impressum.html">Impressum</a></div>
+    </nav>
 
-<footer>
-  <p>&copy; 2025 AfD-Fraktion im Stadtrat Pirmasens. Alle Rechte vorbehalten.</p>
-  <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 AfD-Fraktion im Stadtrat Pirmasens. Alle Rechte vorbehalten.</p>
+        <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
+    </footer>
+</body>
+
+</html>
