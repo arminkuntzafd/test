@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kreis satzung</title>
+    <title>Kreissatzung</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,22 +15,17 @@
 
     <main>
         <!-- Hier wird das iFrame für die Kreissatzung eingefügt -->
-        <iframe src="Satzung_Kreis.pdf" width="100%" height="100%" style="border:none;"></iframe>
+        <iframe src="Satzung_Kreis.pdf" width="100%" height="600px" style="border:none;"></iframe>
     </main>
+
+    <script>
+        fetch('layout.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('layout-container').innerHTML = data;
+            });
+    </script>
 
 </body>
 
 </html>
-<script>
-    fetch('layout.html')
-        .then(response => {
-            if (!response.ok) throw new Error('Fehler beim Laden der Layout-Datei');
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('layout-container').innerHTML = data;
-        })
-        .catch(error => {
-            console.error('Fehler:', error);
-        });
-</script>
