@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kreissatzung - iFrame</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Stelle sicher, dass das Layout geladen wird, wenn die Seite bereit ist
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("layout.html")
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById("layout-container").innerHTML = html;
+        });
+    });
+  </script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 160px); /* Damit es unterhalb von Header und Nav bleibt */
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Layout-Container für Header, Nav und Footer -->
+  <div id="layout-container"></div>
+
+  <!-- Hauptinhalt mit dem eingebetteten PDF -->
+  <main>
+    <h2>Die Kreissatzung</h2>
+    <iframe src="Satzung_Kreis.pdf" title="Kreissatzung PDF"></iframe>
+  </main>
+
+</body>
+</html>
