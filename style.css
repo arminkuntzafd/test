@@ -1,193 +1,60 @@
-/* --- ZENTRALES LAYOUT FÜR IFRAME-DARSTELLUNGEN --- */
-main {
-  padding: 0px 0px;
-  max-width: 100%
-  box-sizing: border-box;
-}
-
-/* Stil für eingebettete PDFs im iframe */
-main iframe {
-  width: 100%;
-  height: 100vh; /* 80% der Viewport-Höhe */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Optional für einen Titel über dem iframe */
-main h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #002147;
-}
-
-/* Responsives Verhalten */
-@media (max-width: 768px) {
-  main {
-    padding: 20px 10px;
-  }
-
-  main iframe {
-    height: 60vh; /* auf kleineren Bildschirmen etwas weniger Höhe */
-  }
-}
-/* === Basis-Layout === */
+/* Basis-Stile für die Seite */
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  background-color: #f4f4f4;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
-/* === Header === */
+/* Header- und Navigation */
 header {
-  background-color: #002147;
-  color: white;
-  padding: 20px 30px;
-  text-align: center;
-  z-index: 1000;
-  position: relative;
+    background-color: #002147;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-container {
-  margin-bottom: 10px;
-}
-
-#logo {
-  height: 50px;
-}
-
-.header-text {
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 1.6em;
-}
-
-header p {
-  margin: 5px 0;
-  font-size: 1.1em;
-}
-
-/* === Navigation === */
 nav {
-  display: flex;
-  justify-content: center;
-  background-color: #333;
-  padding: 10px 0;
-  position: relative;
-  z-index: 999;
-}
-
-.menu-item {
-  position: relative;
-  margin: 0 15px;
-  white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
 }
 
 .menu-item a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
 }
 
-.menu-item:hover > a {
-  background-color: #555;
-}
-
-/* === Dropdown-Level 1 === */
-.dropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #444;
-  min-width: 180px;
-  top: 100%;
-  left: 0;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 2000;
-}
-
-.dropdown:hover > .dropdown-content {
-  display: block;
-}
-
-.dropdown-item {
-  position: relative;
-}
-
-.dropdown-item a {
-  display: block;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.dropdown-item:hover {
-  background-color: #555;
-}
-
-/* === Dropdown-Level 2 & 3 (seitlich) === */
-.dropdown-item .dropdown-content {
-  top: 0;
-  left: 100%;
-  margin-left: 1px;
-  display: none;
-}
-
-.dropdown-item:hover > .dropdown-content {
-  display: block;
-}
-
-/* === Footer === */
-footer {
-  background-color: #002147;
-  color: white;
-  text-align: centeraa;
-  padding: 20px;
-  position: relative;
-  width: 100%;
-}
-
-/* === Abstand zu Header/Nav === */
+/* Main-Bereich mit iFrame */
 main {
-  padding-top: 180px;
+    flex-grow: 1; /* Hauptbereich wächst, um den verbleibenden Platz zu füllen */
+    padding: 20px;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu-item {
-    margin: 5px 0;
-  }
-
-  .dropdown .dropdown-content,
-  .dropdown-item .dropdown-content {
-    position: static;
-    margin-left: 0;
-    box-shadow: none;
-    background-color: #444;
+iframe {
     width: 100%;
-  }
+    height: 100%;
+    border: none;
+}
 
-  .dropdown:hover > .dropdown-content,
-  .dropdown-item:hover > .dropdown-content {
-    display: block;
-  }
+/* Footer immer unten */
+footer {
+    background-color: #002147;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    margin-top: auto; /* Footer nach unten schieben */
+}
+
+/* Optional: Stile für responsives Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
 }
