@@ -1,4 +1,4 @@
-/* Basis-Stile für die Seite */
+/* --- Basis-Layout für die Seite --- */
 html, body {
     height: 100%;
     margin: 0;
@@ -8,7 +8,6 @@ html, body {
     flex-direction: column;
 }
 
-/* Header- und Navigation */
 header {
     background-color: #002147;
     color: white;
@@ -21,24 +20,37 @@ nav {
     justify-content: center;
     background-color: #333;
     padding: 10px;
+    position: relative;
+}
+
+/* Menü und Dropdown */
+.menu-item {
+    position: relative;
+    margin: 0 15px;
+    white-space: nowrap;
 }
 
 .menu-item a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px;
+    display: inline-block;
 }
 
-/* Main-Bereich mit iFrame */
-main {
-    flex-grow: 1; /* Hauptbereich wächst, um den verbleibenden Platz zu füllen */
-    padding: 20px;
+/* Dropdown */
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 180px;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
 }
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+.dropdown:hover > .dropdown-content {
+    display: block;
 }
 
 /* Footer immer unten */
@@ -52,9 +64,39 @@ footer {
     margin-top: auto; /* Footer nach unten schieben */
 }
 
-/* Optional: Stile für responsives Design */
+/* --- Hauptbereich mit iFrame --- */
+main {
+    flex-grow: 1; /* Hauptbereich wächst, um den verbleibenden Platz zu füllen */
+    padding: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsives Verhalten */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
+    }
+
+    .menu-item {
+        margin: 5px 0;
+    }
+
+    .dropdown .dropdown-content,
+    .dropdown-item .dropdown-content {
+        position: static;
+        margin-left: 0;
+        box-shadow: none;
+        background-color: #444;
+        width: 100%;
+    }
+
+    .dropdown:hover > .dropdown-content,
+    .dropdown-item:hover > .dropdown-content {
+        display: block;
     }
 }
