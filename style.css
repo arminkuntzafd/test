@@ -1,23 +1,24 @@
 /* --- Basis-Layout für die gesamte Seite --- */
 html, body {
-    height: 100%; /* Der gesamte sichtbare Bereich wird verwendet */
+    height: 100%; /* Setzt die gesamte Höhe des Viewports */
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Layout mit Flexbox und vertikaler Richtung */
+    flex-direction: column; /* Flexbox-Layout mit vertikaler Ausrichtung */
 }
 
-/* --- Layout-Container --- */
+/* --- Layout-Container (wird aus layout.html geladen) --- */
 #layout-container {
-    flex-grow: 0; /* Der Layout-Container wächst nicht */
+    flex-grow: 0; /* Layout-Container wächst nicht */
+    width: 100%; /* Stellt sicher, dass der Container die gesamte Breite einnimmt */
 }
 
 /* --- Hauptbereich --- */
 main {
-    flex-grow: 1; /* Nimmt den restlichen Platz zwischen Header und Footer ein */
+    flex-grow: 1; /* Der main-Bereich füllt den restlichen verfügbaren Platz aus */
     padding: 20px;
-    overflow: auto; /* Ermöglicht Scrollen, wenn der Inhalt größer ist */
+    overflow: auto; /* Falls der Inhalt zu groß ist, wird er scrollbar */
 }
 
 /* --- iFrame im main-Bereich --- */
@@ -33,12 +34,12 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    position: relative;
     width: 100%;
-    margin-top: auto; /* Stellt sicher, dass der Footer immer unten bleibt */
+    position: relative;
+    margin-top: auto; /* Sorgt dafür, dass der Footer immer unten bleibt */
 }
 
-/* --- Responsive Anpassungen --- */
+/* --- Responsives Design --- */
 @media (max-width: 768px) {
     main {
         padding: 10px;
