@@ -1,36 +1,50 @@
-<!DOCTYPE html>
-<html lang="de">
+/* --- Basis-Layout für die gesamte Seite --- */
+html, body {
+    height: 100%; /* Der gesamte sichtbare Bereich wird verwendet */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Flexbox-Layout vertikal */
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kreissatzung</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        // Funktion, um das Layout von der layout.html zu laden
-        window.onload = function () {
-            fetch("layout.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("layout-container").innerHTML = data;
-                })
-                .catch(error => {
-                    console.error("Fehler beim Laden des Layouts: ", error);
-                });
-        }
-    </script>
-</head>
+/* --- Layout-Container, wird in kreissatzung.html geladen --- */
+#layout-container {
+    flex-grow: 0; /* Der Layout-Container wächst nicht */
+}
 
-<body>
+/* --- Hauptbereich --- */
+main {
+    flex-grow: 1; /* Der Hauptbereich füllt den verbleibenden Platz */
+    padding: 20px;
+    overflow: auto; /* Scrollen bei Bedarf */
+}
 
-    <!-- Layout über die layout.html laden -->
-    <div id="layout-container"></div>
+/* --- iFrame im main-Bereich --- */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
-    <main>
-        <!-- Hier wird das iFrame für die Kreissatzung eingefügt -->
-        <iframe src="Satzung_Kreis.pdf" width="100%" height="100%" style="border:none;"></iframe>
-    </main>
+/* --- Footer --- */
+footer {
+    background-color: #002147;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    margin-top: auto; /* Footer wird immer unten angezeigt */
+}
 
-</body>
+/* --- Responsive Anpassungen --- */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
 
-</html>
+    iframe {
+        height: 60vh; /* Auf kleineren Bildschirmen weniger Höhe für das iFrame */
+    }
+}
