@@ -1,73 +1,48 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AfD Stadtrat Pirmasens</title>
-    <link rel="stylesheet" href="style.css" />
-    
-    <!-- Favicon -->
-    <link rel="icon" href="AfD.png" type="image/png" />
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="AfD.png" alt="AfD Logo" id="logo">
-                </a>
-            </div>
-            <div class="header-text">
-                <h1>AfD-Fraktion im Stadtrat Pirmasens</h1>
-                <p>Wir setzen uns für Ihre Interessen ein!</p>
-            </div>
-        </div>
-    </header>
+<!-- layout.html -->
+<header>
+  <div class="header-content">
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="AfD.png" alt="AfD Logo" id="logo">
+      </a>
+    </div>
+    <div class="header-text">
+      <h1>AfD-Fraktion im Stadtrat Pirmasens</h1>
+      <p>Wir setzen uns für Ihre Interessen ein!</p>
+    </div>
+  </div>
+</header>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="menu-item"><a href="index.html">Start</a></div>
-        <div class="menu-item"><a href="team.html">Unser Team</a></div>
-        <div class="menu-item"><a href="kontakt.html">Kontakt</a></div>
+<nav>
+  <div class="menu-item"><a href="index.html">Start</a></div>
+  <div class="menu-item"><a href="team.html">Unser Team</a></div>
+  <div class="menu-item"><a href="kontakt.html">Kontakt</a></div>
 
-        <div class="menu-item dropdown">
-            <a href="#">Grundlagen</a>
+  <div class="menu-item dropdown">
+    <a href="#">Grundlagen</a>
+    <div class="dropdown-content">
+      <div class="dropdown-item"><a href="kreissatzung.html">Kreissatzung</a></div> <!-- Verlinkung zur Kreissatzung-Seite -->
+      <div class="dropdown-item"><a href="#">Landessatzung</a></div>
+      <div class="dropdown-item dropdown">
+        <a href="#">Bund</a>
+        <div class="dropdown-content">
+          <div class="dropdown-item"><a href="#">Bundessatzung</a></div>
+          <div class="dropdown-item dropdown">
+            <a href="#">Ordnungen</a>
             <div class="dropdown-content">
-                <div class="dropdown-item"><a href="layout.html#kreissatzung">Kreissatzung</a></div>
-                <div class="dropdown-item"><a href="#">Landessatzung</a></div>
-                <div class="dropdown-item dropdown">
-                    <a href="#">Bund</a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-item"><a href="#">Bundessatzung</a></div>
-                        <div class="dropdown-item dropdown">
-                            <a href="#">Ordnungen</a>
-                            <div class="dropdown-content">
-                                <div class="dropdown-item"><a href="#">Finanzordnung</a></div>
-                                <div class="dropdown-item"><a href="#">Schiedsordnung</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="dropdown-item"><a href="#">Finanzordnung</a></div>
+              <div class="dropdown-item"><a href="#">Schiedsordnung</a></div>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="menu-item"><a href="impressum.html">Impressum</a></div>
-    </nav>
+  <div class="menu-item"><a href="impressum.html">Impressum</a></div>
+</nav>
 
-    <!-- Hauptinhalt / IFrame für PDF -->
-    <main id="main-content">
-        <!-- IFrame für die Kreissatzung -->
-        <section id="kreissatzung" class="iframe-section">
-            <h2>Kreissatzung</h2>
-            <iframe src="Satzung_Kreis.pdf" width="100%" height="600px" frameborder="0"></iframe>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 AfD-Fraktion im Stadtrat Pirmasens. Alle Rechte vorbehalten.</p>
-        <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
-    </footer>
-</body>
-</html>
+<footer>
+  <p>&copy; 2025 AfD-Fraktion im Stadtrat Pirmasens. Alle Rechte vorbehalten.</p>
+  <p><a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
+</footer>
