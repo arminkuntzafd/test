@@ -1,9 +1,97 @@
-/* --- Basis-Layout für die Seite --- */
+[02:05, 11.6.2025] Meta AI: /* --- Basis-Layout für die Seite --- */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family:/* --- Basis-Layout für die Seite --- */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #002147;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 10px;
+  position: relative;
+}
+
+/* Menü und Dropdown */
+.menu-item {
+  position: relative;
+  margin: 0 15px;
+  white-space: nowrap;
+}
+
+.menu-item a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+/* Dropdown */
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  min-width: 180px;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+}
+
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+/* --- Hauptbereich mit iFrame --- */
+main {
+  flex-grow: 1; /* Hauptbereich wächst, um den verbleibenden Platz zu füllen */
+  padding: 20px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsives Verhalten */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+  .menu-item {
+    margin: 5px 0;
+  }
+  .dropdown .dropdown-content, .dropdown-item .dropdown-content {
+    position: static;
+    margin-left: 0;
+    box-shadow: none;
+    background-color: #444;
+    width: 100%;
+  }
+  .dropdown:hover > .dropdown-content, .dropdown-item:hover > .dropdown-content {
+    display: block;
+  }
+}
+
+
+Ich habe alle CSS-Regeln entfernt, die sich auf den footer-Selektor beziehen.
+[02:08, 11.6.2025] Armin Kuntz: bringe mir das css in ordnung footer steht über content content wird nur in einem schmalen streifen angezeigt
+[02:08, 11.6.2025] Meta AI: Um den Footer unter den Content zu platzieren und den Content-Bereich auf die volle Breite auszudehnen, kannst du folgende Anpassungen vornehmen:
+
+
+/* --- Basis-Layout für die Seite --- */
 html, body {
   height: 100%;
   margin: 0;
@@ -100,6 +188,103 @@ footer {
   }
 }
 
+
+Ich habe folgende Änderungen vorgenommen:
+
+- main bekommt display: flex und flex-direction: column, damit der Inhalt auf die volle Höhe ausgedehnt wird.
+- iframe bekommt flex-grow: 1, damit es den verbleibenden Platz einnimmt.
+
+Jetzt sollte der Footer unter dem Content-Bereich angezeigt werden und der Content-Bereich sollte auf die volle Breite ausgedehnt werden.
+[02:14, 11.6.2025] Armin Kuntz: /* --- Basis-Layout für die Seite --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #002147;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 10px;
+  position: relative;
+}
+
+/* Menü und Dropdown */
+.menu-item {
+  position: relative;
+  margin: 0 15px;
+  white-space: nowrap;
+}
+
+.menu-item a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+/* Dropdown */
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  min-width: 180px;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 8px…
+[02:14, 11.6.2025] Meta AI: Hier ist ein Beispiel für einen schönen Text, den du in dein main-Element einfügen kannst:
+
+
+<main>
+  <h1>Willkommen auf unserer Website!</h1>
+  <p>Wir freuen uns, dass du hier bist. Unsere Website bietet dir eine Vielzahl von Informationen und Ressourcen, die dir helfen, dich zurechtzufinden.</p>
+  <p>Unsere Mission ist es, dir die besten Inhalte und Services zu bieten, damit du deine Ziele erreichen kannst.</p>
+  <iframe src="https://www.example.com" frameborder="0" width="100%" height="500"></iframe>
+</main>
+
+
+Du kannst den Text natürlich an deine Bedürfnisse anpassen und den Inhalt des iframe-Elements ändern, um ihn an deine Anforderungen anzupassen.
+
+Wenn du einen mehr dynamischen Inhalt haben möchtest, könntest du auch ein paar Überschriften und Absätze mit einem anderen Thema erstellen, wie zum Beispiel:
+
+
+<main>
+  <h1>Unsere Projekte</h1>
+  <p>Wir arbeiten an verschiedenen Projekten, um unsere Ziele zu erreichen.</p>
+  <h2>Projekt 1</h2>
+  <p>Dies ist ein Projekt, das wir aktuell durchführen.</p>
+  <h2>Projekt 2</h2>
+  <p>Ein weiteres Projekt, an dem wir arbeiten.</p>
+  <iframe src="https://www.example.com" frameborder="0" width="100%" height="500"></iframe>
+</main>
+
+
+Ich hoffe, das hilft! Lass mich wissen, wenn du weitere Fragen hast.
+[02:18, 11.6.2025] Armin Kuntz: der footer steht noch immer oben unter dem nav gib mir neue style.css
+[02:18, 11.6.2025] Meta AI: Hier ist eine neue Version der style.css, die den Footer unter den Content-Bereich platziert:
+
+
+/* --- Basis-Layout für die Seite --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
   flex-direction: column;
 }
 
@@ -150,14 +335,23 @@ nav {
 
 /* --- Hauptbereich mit iFrame --- */
 main {
-  flex-grow: 1; /* Hauptbereich wächst, um den verbleibenden Platz zu füllen */
+  flex-grow: 1;
   padding: 20px;
 }
 
 iframe {
   width: 100%;
-  height: 100%;
+  height: 500px;
   border: none;
+}
+
+/* Footer */
+footer {
+  background-color: #002147;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
 }
 
 /* Responsives Verhalten */
